@@ -1,0 +1,90 @@
+{
+ "curso": "230 - Meteorologia",
+ "curriculo": "20261",
+ "cores": {
+  "MTM": "#add8e6",
+  "INE": "#ffd580",
+  "FSC": "#8fbc8f",
+  "ENS": "#90ee90",
+  "QMC": "#fffacd",
+  "OCN": "#b0c4de",
+  "ECZ": "#d3d3d3"
+ },
+ "regras": {
+  "fasesExibidas": 8,
+  "aulasMin": 15,
+  "aulasMax": 27,
+  "semestresMin": 8,
+  "semestresMax": 14,
+  "estagio": {
+   "opcoes": [
+    ["FSC7124"]
+   ]
+  },
+  "optativas": {
+   "tipo": "optativa",
+   "haMin": 108,
+   "areasMin": 0
+  }
+ },
+ "observacoes": "preCH mantido como 0. Extensão ignorada. Atividades Complementares alocadas na fase 8. Regra 'projetos' foi removida para não quebrar a validação estrita do EELscape.",
+ "disciplinas": [
+  {"codigo": "FSC5101", "nome": "Física I", "ha": 72, "aulas": 4, "fase": 1, "prereq": [], "preCH": 0},
+  {"codigo": "FSC5181", "nome": "Meteorologia Básica I", "ha": 72, "aulas": 4, "fase": 1, "prereq": [], "preCH": 0},
+  {"codigo": "FSC5911", "nome": "Tópicos de Matemática Básica para Física Geral", "ha": 72, "aulas": 4, "fase": 1, "prereq": [], "preCH": 0},
+  {"codigo": "MTM3110", "nome": "Cálculo 1", "ha": 72, "aulas": 4, "fase": 1, "prereq": [], "preCH": 0},
+  {"codigo": "QMC5125", "nome": "Química Geral Experimental A", "ha": 36, "aulas": 2, "fase": 1, "prereq": [], "preCH": 0},
+  {"codigo": "QMC5138", "nome": "Química Geral", "ha": 36, "aulas": 2, "fase": 1, "prereq": [], "preCH": 0},
+  {"codigo": "FSC5002", "nome": "Física II", "ha": 72, "aulas": 4, "fase": 2, "prereq": [["FSC5101"], ["MTM3110"]], "preCH": 0},
+  {"codigo": "FSC5141", "nome": "Laboratório de Física I", "ha": 54, "aulas": 3, "fase": 2, "prereq": [], "preCH": 0},
+  {"codigo": "FSC5182", "nome": "Meteorologia Básica II", "ha": 72, "aulas": 4, "fase": 2, "prereq": [], "preCH": 0},
+  {"codigo": "FSC7113", "nome": "Elementos de Astronomia e Cartografia", "ha": 72, "aulas": 4, "fase": 2, "prereq": [], "preCH": 0},
+  {"codigo": "MTM3120", "nome": "Cálculo 2", "ha": 72, "aulas": 4, "fase": 2, "prereq": [["MTM3110"]], "preCH": 0},
+  {"codigo": "MTM3121", "nome": "Álgebra Linear", "ha": 72, "aulas": 4, "fase": 2, "prereq": [], "preCH": 0},
+  {"codigo": "FSC5113", "nome": "Física III", "ha": 72, "aulas": 4, "fase": 3, "prereq": [["FSC5002"], ["MTM3120"], ["MTM3121"]], "preCH": 0},
+  {"codigo": "FSC5142", "nome": "Laboratório de Física II", "ha": 54, "aulas": 3, "fase": 3, "prereq": [["FSC5101"], ["FSC5141"]], "preCH": 0},
+  {"codigo": "FSC7111", "nome": "Agrometeorologia", "ha": 36, "aulas": 2, "fase": 3, "prereq": [["FSC5181"], ["FSC5182"]], "preCH": 0},
+  {"codigo": "FSC7114", "nome": "Introdução à Física Computacional", "ha": 72, "aulas": 4, "fase": 3, "prereq": [["FSC5002"], ["MTM3121"]], "preCH": 0},
+  {"codigo": "INE5108", "nome": "Estatística e Probabilidade para Ciências Exatas", "ha": 54, "aulas": 3, "fase": 3, "prereq": [["MTM3120"]], "preCH": 0},
+  {"codigo": "MTM3103", "nome": "Cálculo 3", "ha": 72, "aulas": 4, "fase": 3, "prereq": [["MTM3120"], ["MTM3121"]], "preCH": 0},
+  {"codigo": "FSC2143", "nome": "Laboratório de Física III", "ha": 54, "aulas": 3, "fase": 4, "prereq": [["FSC5002"], ["FSC5142"]], "preCH": 0},
+  {"codigo": "FSC5114", "nome": "Física IV", "ha": 72, "aulas": 4, "fase": 4, "prereq": [["FSC5113"], ["MTM3103"]], "preCH": 0},
+  {"codigo": "FSC5705", "nome": "Física Computacional", "ha": 72, "aulas": 4, "fase": 4, "prereq": [["FSC7114"]], "preCH": 0},
+  {"codigo": "FSC7103", "nome": "Meteorologia Física I", "ha": 72, "aulas": 4, "fase": 4, "prereq": [["FSC5113"]], "preCH": 0},
+  {"codigo": "MTM3131", "nome": "Equações Diferenciais Ordinárias", "ha": 72, "aulas": 4, "fase": 4, "prereq": [["MTM3120"], ["MTM3121"]], "preCH": 0},
+  {"codigo": "OCN7043", "nome": "Interação Oceano Atmosfera", "ha": 72, "aulas": 4, "fase": 4, "prereq": [["FSC5182"], ["MTM3103"]], "preCH": 0},
+  {"codigo": "ENS5102", "nome": "Hidrologia", "ha": 72, "aulas": 4, "fase": 5, "prereq": [["FSC5002"], ["FSC7111"]], "preCH": 0},
+  {"codigo": "FSC2144", "nome": "Laboratório de Física IV", "ha": 54, "aulas": 3, "fase": 5, "prereq": [["FSC2143"], ["FSC5113"]], "preCH": 0},
+  {"codigo": "FSC5131", "nome": "Termodinâmica", "ha": 72, "aulas": 4, "fase": 5, "prereq": [["FSC5002"], ["MTM3103"], ["MTM3131"]], "preCH": 0},
+  {"codigo": "FSC5218", "nome": "Mecânica Geral", "ha": 72, "aulas": 4, "fase": 5, "prereq": [["FSC5002"], ["MTM3103"], ["MTM3131"]], "preCH": 0},
+  {"codigo": "FSC7101", "nome": "Instrumentos Meteorológicos e Técnicas de Observação I", "ha": 54, "aulas": 3, "fase": 5, "prereq": [["FSC5113"]], "preCH": 0},
+  {"codigo": "MTM3104", "nome": "Cálculo 4", "ha": 72, "aulas": 4, "fase": 5, "prereq": [["MTM3131"]], "preCH": 0},
+  {"codigo": "FSC7102", "nome": "Instrumentos Meteorológicos e Técnicas de Observação II", "ha": 54, "aulas": 3, "fase": 6, "prereq": [["FSC7101"]], "preCH": 0},
+  {"codigo": "FSC7104", "nome": "Climatologia", "ha": 108, "aulas": 6, "fase": 6, "prereq": [["FSC5002"], ["INE5108"], ["MTM3121"]], "preCH": 0},
+  {"codigo": "FSC7105", "nome": "Meteorologia Dinâmica I", "ha": 72, "aulas": 4, "fase": 6, "prereq": [["FSC5218"]], "preCH": 0},
+  {"codigo": "FSC7107", "nome": "Meteorologia Física II", "ha": 72, "aulas": 4, "fase": 6, "prereq": [["FSC5131"]], "preCH": 0},
+  {"codigo": "FSC7117", "nome": "Sensoriamento Remoto da Atmosfera", "ha": 72, "aulas": 4, "fase": 6, "prereq": [["FSC7103"]], "preCH": 0},
+  {"codigo": "FSC7106", "nome": "Meteorologia Sinótica I", "ha": 72, "aulas": 4, "fase": 7, "prereq": [["FSC7103"], ["FSC7105"]], "preCH": 0},
+  {"codigo": "FSC7108", "nome": "Meteorologia Dinâmica II", "ha": 72, "aulas": 4, "fase": 7, "prereq": [["FSC7105"]], "preCH": 0},
+  {"codigo": "FSC7110", "nome": "Micrometeorologia", "ha": 72, "aulas": 4, "fase": 7, "prereq": [["FSC7105"]], "preCH": 0},
+  {"codigo": "FSC7115", "nome": "Modelagem Numérica da Atmosfera", "ha": 72, "aulas": 4, "fase": 7, "prereq": [["FSC7105"]], "preCH": 0},
+  {"codigo": "FSC7116", "nome": "Meteorologia de Mesoescala", "ha": 72, "aulas": 4, "fase": 7, "prereq": [["FSC7105"]], "preCH": 0},
+  {"codigo": "FSC7121", "nome": "Trabalho de Conclusão do Curso I (TCC)", "ha": 54, "aulas": 3, "fase": 7, "prereq": [["FSC7103"]], "preCH": 0},
+  {"codigo": "FSC7109", "nome": "Meteorologia Sinótica II", "ha": 72, "aulas": 4, "fase": 8, "prereq": [["FSC7106"]], "preCH": 0},
+  {"codigo": "FSC7122", "nome": "Trabalho de Conclusão de Curso II", "ha": 54, "aulas": 3, "fase": 8, "prereq": [["FSC7121"]], "preCH": 0},
+  {"codigo": "FSC7124", "nome": "Estágio Curricular", "ha": 162, "aulas": 9, "fase": 8, "prereq": [], "preCH": 0},
+  {"codigo": "FSC7202", "nome": "Atividades Complementares", "ha": 108, "aulas": 6, "fase": 8, "prereq": [["FSC5181"], ["FSC5182"], ["INE5108"]], "preCH": 0}
+ ],
+ "catalogo": [
+  {"codigo": "ECZ5102", "nome": "Conservação de Recursos Naturais", "ha": 36, "aulas": 2, "tipo": "optativa", "area": null, "prereq": [], "preCH": 0},
+  {"codigo": "FSC5106", "nome": "Introdução à Física Moderna", "ha": 36, "aulas": 2, "tipo": "optativa", "area": null, "prereq": [], "preCH": 0},
+  {"codigo": "FSC5515", "nome": "Física das Mudanças Climáticas", "ha": 36, "aulas": 2, "tipo": "optativa", "area": null, "prereq": [["FSC7103"]], "preCH": 0},
+  {"codigo": "FSC5901", "nome": "Projeto de Pesquisa", "ha": 120, "aulas": 6, "tipo": "optativa", "area": null, "prereq": [], "preCH": 0},
+  {"codigo": "FSC5902", "nome": "Seminário de Física", "ha": 36, "aulas": 2, "tipo": "optativa", "area": null, "prereq": [], "preCH": 0},
+  {"codigo": "FSC7005", "nome": "Introdução à Astronomia", "ha": 54, "aulas": 3, "tipo": "optativa", "area": null, "prereq": [], "preCH": 0},
+  {"codigo": "FSC7119", "nome": "Meteorologia Estatística", "ha": 72, "aulas": 4, "tipo": "optativa", "area": null, "prereq": [["FSC5181"], ["FSC5182"], ["INE5108"]], "preCH": 0},
+  {"codigo": "LSB7244", "nome": "Língua Brasileira de Sinais - Libras I", "ha": 72, "aulas": 4, "tipo": "optativa", "area": null, "prereq": [], "preCH": 0},
+  {"codigo": "OCN7042", "nome": "Fenômeno de Transporte", "ha": 72, "aulas": 4, "tipo": "optativa", "area": null, "prereq": [["FSC5101"], ["MTM3120"]], "preCH": 0},
+  {"codigo": "OCN7044", "nome": "Oceanografia Dinâmica", "ha": 72, "aulas": 4, "tipo": "optativa", "area": null, "prereq": [["OCN7042"]], "preCH": 0}
+ ]
+}
