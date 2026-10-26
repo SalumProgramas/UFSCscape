@@ -1,12 +1,4 @@
 [
-  {
-    "id": "MET20261",
-    "nome": "Meteorologia 2026.1",
-    "url": "curriculos/met20261.json"
-  },
-  {
-    "id": "EEL20051",
-    "nome": "Engenharia Elétrica 2005.1",
-    "url": "curriculos/eel20051.json"
-  }
+  {"id": "MET20261", "nome": "Meteorologia 2026.1", "url": "curriculos/met20261.json"},
+  {"id": "EEL20051", "nome": "Engenharia Elétrica 2026.1", "url": "curriculos/eel20261.json"}
 ]
