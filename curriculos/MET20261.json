@@ -1,0 +1,120 @@
+{
+ "curso": "202 - Engenharia Elétrica",
+ "curriculo": "20051",
+ "cores": {"EEL":"#fcfca6","MTM":"#b4ecb9","FSC":"#f6d8fb","INE":"#c2f8fb","QMC":"#ffcf7a","EMC":"#d4b293"},
+ "regras": {
+  "fasesExibidas": 10, "aulasMin": 15, "aulasMax": 27, "semestresMin": 10, "semestresMax": 18,
+  "estagio": {"opcoes": [["EST7872"], ["EST7830","EST7871"]]},
+  "optativas": {"tipo": "optativa", "haMin": 432, "areasMin": 4},
+  "projetos": {"exigidoPor": "EEL7890", "exigencias": [
+   {"tipo": "projeto1", "rotulo": "Projeto Nível 1", "qtdMin": 2, "areasDistintasMin": 2},
+   {"tipo": "projeto2", "rotulo": "Projeto Nível 2", "qtdMin": 1}
+  ]}
+ },
+ "observacoes": "prereq = lista de cláusulas ligadas por E; cada cláusula é uma lista de alternativas ligadas por OU. preCH em H/A. Estágios, Projetos e Optativas são inseridos via busca no catálogo. cores = cor do bloco por prefixo (3 primeiras letras) do código. regras.estagio.opcoes = alternativas (OU); cada alternativa é uma lista de códigos que devem estar todos na grade (E). regras.optativas = carga mínima (haMin) e nº mínimo de áreas distintas (areasMin) entre itens do catálogo com o tipo informado. regras.projetos = exigências verificadas apenas quando exigidoPor estiver na grade.",
+ "disciplinas": [
+  {"codigo":"EEL7011","nome":"Laboratório de Eletricidade Básica","ha":36,"aulas":2,"fase":1,"prereq":[],"preCH":0},
+  {"codigo":"EEL7014","nome":"Introdução às Engenharias Elétrica e Eletrônica","ha":36,"aulas":2,"fase":1,"prereq":[],"preCH":0},
+  {"codigo":"EGR5619","nome":"Desenho Técnico para Engenharia Elétrica","ha":72,"aulas":4,"fase":1,"prereq":[],"preCH":0},
+  {"codigo":"FSC5101","nome":"Física I","ha":72,"aulas":4,"fase":1,"prereq":[],"preCH":0},
+  {"codigo":"INE5201","nome":"Introdução à Ciência da Computação","ha":54,"aulas":3,"fase":1,"prereq":[],"preCH":0},
+  {"codigo":"MTM3110","nome":"Cálculo 1","ha":72,"aulas":4,"fase":1,"prereq":[],"preCH":0},
+  {"codigo":"QMC5125","nome":"Química Geral Experimental A","ha":36,"aulas":2,"fase":1,"prereq":[],"preCH":0},
+  {"codigo":"QMC5138","nome":"Química Geral","ha":36,"aulas":2,"fase":1,"prereq":[],"preCH":0},
+
+  {"codigo":"EEL5105","nome":"Circuitos e Técnicas Digitais","ha":90,"aulas":5,"fase":2,"prereq":[["EEL7011"],["INE5201"]],"preCH":0},
+  {"codigo":"EEL7013","nome":"Laboratório de Transdutores","ha":36,"aulas":2,"fase":2,"prereq":[["EEL7011"]],"preCH":0},
+  {"codigo":"FSC5002","nome":"Física II","ha":72,"aulas":4,"fase":2,"prereq":[["FSC5101"],["MTM3110"]],"preCH":0},
+  {"codigo":"FSC5122","nome":"Física Experimental I","ha":54,"aulas":3,"fase":2,"prereq":[["FSC5101"]],"preCH":0},
+  {"codigo":"MTM3120","nome":"Cálculo 2","ha":72,"aulas":4,"fase":2,"prereq":[["MTM3110"]],"preCH":0},
+  {"codigo":"MTM3121","nome":"Álgebra Linear","ha":72,"aulas":4,"fase":2,"prereq":[["MTM3110"]],"preCH":0},
+
+  {"codigo":"ECZ5102","nome":"Conservação de Recursos Naturais","ha":36,"aulas":2,"fase":3,"prereq":[],"preCH":700},
+  {"codigo":"FSC5113","nome":"Física III","ha":72,"aulas":4,"fase":3,"prereq":[["FSC5002"]],"preCH":0},
+  {"codigo":"INE5118","nome":"Probabilidade Estatística e Processos Estocásticos","ha":72,"aulas":4,"fase":3,"prereq":[["MTM3120"]],"preCH":0},
+  {"codigo":"INE5202","nome":"Cálculo Numérico em Computadores","ha":72,"aulas":4,"fase":3,"prereq":[["INE5201"],["MTM3120"],["MTM3121"]],"preCH":0},
+  {"codigo":"MTM3103","nome":"Cálculo 3","ha":72,"aulas":4,"fase":3,"prereq":[["MTM3120"]],"preCH":0},
+  {"codigo":"MTM3131","nome":"Equações Diferenciais Ordinárias","ha":72,"aulas":4,"fase":3,"prereq":[["MTM3120"],["MTM3121"]],"preCH":0},
+
+  {"codigo":"EEL7035","nome":"Microprocessadores e Microcontroladores","ha":72,"aulas":4,"fase":4,"prereq":[["EEL5105"]],"preCH":0},
+  {"codigo":"EEL7041","nome":"Eletromagnetismo","ha":72,"aulas":4,"fase":4,"prereq":[["FSC5113"],["MTM3103"]],"preCH":0},
+  {"codigo":"EEL7045","nome":"Circuitos Elétricos A","ha":108,"aulas":6,"fase":4,"prereq":[["EEL7013"],["FSC5113"],["MTM3120"]],"preCH":0},
+  {"codigo":"EPS7019","nome":"Engenharia Econômica","ha":54,"aulas":3,"fase":4,"prereq":[],"preCH":900},
+  {"codigo":"FSC5114","nome":"Física IV","ha":72,"aulas":4,"fase":4,"prereq":[["FSC5113"]],"preCH":0},
+  {"codigo":"MTM3104","nome":"Cálculo 4","ha":72,"aulas":4,"fase":4,"prereq":[["MTM3131"]],"preCH":0},
+
+  {"codigo":"EEL7051","nome":"Materiais Elétricos","ha":72,"aulas":4,"fase":5,"prereq":[["FSC5114"],["QMC5125"],["QMC5138"]],"preCH":0},
+  {"codigo":"EEL7052","nome":"Sistemas Lineares","ha":90,"aulas":5,"fase":5,"prereq":[["EEL7045"],["MTM3104"],["MTM3121"]],"preCH":0},
+  {"codigo":"EEL7053","nome":"Ondas Eletromagnéticas","ha":72,"aulas":4,"fase":5,"prereq":[["EEL7041"],["EEL7045"]],"preCH":0},
+  {"codigo":"EEL7055","nome":"Circuitos Elétricos B","ha":108,"aulas":6,"fase":5,"prereq":[["EEL7045"]],"preCH":0},
+  {"codigo":"EEL7061","nome":"Eletrônica I","ha":108,"aulas":6,"fase":5,"prereq":[["EEL7045"],["FSC5114"]],"preCH":0},
+
+  {"codigo":"DIR5998","nome":"Legislação e Ética em Engenharia Elétrica","ha":36,"aulas":2,"fase":6,"prereq":[],"preCH":1200},
+  {"codigo":"EEL7062","nome":"Princípios de Sistemas de Comunicação","ha":90,"aulas":5,"fase":6,"prereq":[["EEL7052"],["INE5118"]],"preCH":0},
+  {"codigo":"EEL7063","nome":"Sistemas de Controle (Teoria e Laboratório)","ha":108,"aulas":6,"fase":6,"prereq":[["EEL7052"]],"preCH":0},
+  {"codigo":"EEL7064","nome":"Conversão Eletromecânica de Energia A","ha":72,"aulas":4,"fase":6,"prereq":[["EEL7041"],["EEL7051"],["EEL7055"]],"preCH":0},
+  {"codigo":"EEL7072","nome":"Projeto de Instalações Elétricas","ha":72,"aulas":4,"fase":6,"prereq":[["EEL7051"],["EEL7055"]],"preCH":0},
+  {"codigo":"EEL7522","nome":"Processamento Digital de Sinais","ha":72,"aulas":4,"fase":6,"prereq":[["EEL7052"]],"preCH":0},
+
+  {"codigo":"EEL7071","nome":"Introdução a Sistemas de Energia Elétrica","ha":72,"aulas":4,"fase":7,"prereq":[["EEL7053"],["EEL7064"],["INE5202"]],"preCH":0},
+  {"codigo":"EEL7073","nome":"Conversão Eletromecânica de Energia B","ha":72,"aulas":4,"fase":7,"prereq":[["EEL7064"]],"preCH":0},
+  {"codigo":"EEL7074","nome":"Eletrônica de Potencia I","ha":90,"aulas":5,"fase":7,"prereq":[["EEL7061"]],"preCH":0},
+  {"codigo":"EEL7300","nome":"Instrumentação Eletrônica","ha":90,"aulas":5,"fase":7,"prereq":[["EEL5105"],["EEL7061"]],"preCH":0},
+  {"codigo":"EMC5425","nome":"Fenômenos de Transportes","ha":72,"aulas":4,"fase":7,"prereq":[["FSC5113","FSC5122","MTM3103"],["FSC5163","MTM3103"]],"preCH":0},
+  {"codigo":"INE5407","nome":"Ciência, Tecnologia e Sociedade","ha":54,"aulas":3,"fase":7,"prereq":[],"preCH":1200},
+
+  {"codigo":"EEL7080","nome":"Seminários de Engenharia Elétrica","ha":36,"aulas":2,"fase":8,"prereq":[["EEL7055"]],"preCH":72},
+  {"codigo":"EEL7081","nome":"Aspectos de Segurança em Engenharia Elétrica","ha":36,"aulas":2,"fase":8,"prereq":[["EEL7072"]],"preCH":0},
+
+  {"codigo":"EEL7889","nome":"Planejamento do Trabalho de conclusão de Curso","ha":36,"aulas":2,"fase":9,"prereq":[["EEL7080"]],"preCH":144},
+  {"codigo":"EEL7890","nome":"Trabalho de conclusão de Curso (TCC)","ha":324,"aulas":18,"fase":10,"prereq":[["EEL7889"]],"preCH":216}
+ ],
+ "catalogo": [
+  {"codigo":"EST7830", "nome":"Estágio Curto I", "ha":180, "aulas":10, "tipo":"estagio_curto", "area":null, "prereq":[], "preCH":2000},
+  {"codigo":"EST7871", "nome":"Estágio Curto II", "ha":180, "aulas":10, "tipo":"estagio_curto", "area":null, "prereq":[["EST7830"]], "preCH":0},
+  {"codigo":"EST7872", "nome":"Estágio Longo", "ha":360, "aulas":20, "tipo":"estagio_longo", "area":null, "prereq":[], "preCH":2000},
+
+  {"codigo":"OPT-A1-4A", "nome":"Optat. Área 1: Energia (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":1, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A1-4B", "nome":"Optat. Área 1: Energia (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":1, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A1-3", "nome":"Optat. Área 1: Energia (3 cr)", "ha":54, "aulas":3, "tipo":"optativa", "area":1, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A1-2", "nome":"Optat. Área 1: Energia (2 cr)", "ha":36, "aulas":2, "tipo":"optativa", "area":1, "prereq":[], "preCH":0},
+
+  {"codigo":"OPT-A2-4A", "nome":"Optat. Área 2: Elet. Potência (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":2, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A2-4B", "nome":"Optat. Área 2: Elet. Potência (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":2, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A2-3", "nome":"Optat. Área 2: Elet. Potência (3 cr)", "ha":54, "aulas":3, "tipo":"optativa", "area":2, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A2-2", "nome":"Optat. Área 2: Elet. Potência (2 cr)", "ha":36, "aulas":2, "tipo":"optativa", "area":2, "prereq":[], "preCH":0},
+
+  {"codigo":"OPT-A3-4A", "nome":"Optat. Área 3: Eletrônica (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":3, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A3-4B", "nome":"Optat. Área 3: Eletrônica (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":3, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A3-3", "nome":"Optat. Área 3: Eletrônica (3 cr)", "ha":54, "aulas":3, "tipo":"optativa", "area":3, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A3-2", "nome":"Optat. Área 3: Eletrônica (2 cr)", "ha":36, "aulas":2, "tipo":"optativa", "area":3, "prereq":[], "preCH":0},
+
+  {"codigo":"OPT-A4-4A", "nome":"Optat. Área 4: Telecom (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":4, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A4-4B", "nome":"Optat. Área 4: Telecom (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":4, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A4-3", "nome":"Optat. Área 4: Telecom (3 cr)", "ha":54, "aulas":3, "tipo":"optativa", "area":4, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A4-2", "nome":"Optat. Área 4: Telecom (2 cr)", "ha":36, "aulas":2, "tipo":"optativa", "area":4, "prereq":[], "preCH":0},
+
+  {"codigo":"OPT-A5-4A", "nome":"Optat. Área 5: Controle e Sinais (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":5, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A5-4B", "nome":"Optat. Área 5: Controle e Sinais (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":5, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A5-3", "nome":"Optat. Área 5: Controle e Sinais (3 cr)", "ha":54, "aulas":3, "tipo":"optativa", "area":5, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A5-2", "nome":"Optat. Área 5: Controle e Sinais (2 cr)", "ha":36, "aulas":2, "tipo":"optativa", "area":5, "prereq":[], "preCH":0},
+
+  {"codigo":"OPT-A6-4A", "nome":"Optat. Área 6: Gestão (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":6, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A6-4B", "nome":"Optat. Área 6: Gestão (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":6, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A6-3", "nome":"Optat. Área 6: Gestão (3 cr)", "ha":54, "aulas":3, "tipo":"optativa", "area":6, "prereq":[], "preCH":0},
+  {"codigo":"OPT-A6-2", "nome":"Optat. Área 6: Gestão (2 cr)", "ha":36, "aulas":2, "tipo":"optativa", "area":6, "prereq":[], "preCH":0},
+
+  {"codigo":"OPT-LIVRE-4A", "nome":"Optat. Livre (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":null, "prereq":[], "preCH":0},
+  {"codigo":"OPT-LIVRE-4B", "nome":"Optat. Livre (4 cr)", "ha":72, "aulas":4, "tipo":"optativa", "area":null, "prereq":[], "preCH":0},
+  {"codigo":"OPT-LIVRE-2", "nome":"Optat. Livre (2 cr)", "ha":36, "aulas":2, "tipo":"optativa", "area":null, "prereq":[], "preCH":0},
+
+  {"codigo":"PROJ1-A1", "nome":"Projeto Nível I - Energia (4 cr)", "ha":72, "aulas":4, "tipo":"projeto1", "area":1, "prereq":[], "preCH":0},
+  {"codigo":"PROJ1-A2", "nome":"Projeto Nível I - Elet. Potência (4 cr)", "ha":72, "aulas":4, "tipo":"projeto1", "area":2, "prereq":[], "preCH":0},
+  {"codigo":"PROJ1-A3", "nome":"Projeto Nível I - Eletrônica (4 cr)", "ha":72, "aulas":4, "tipo":"projeto1", "area":3, "prereq":[], "preCH":0},
+  {"codigo":"PROJ1-A4", "nome":"Projeto Nível I - Telecom (4 cr)", "ha":72, "aulas":4, "tipo":"projeto1", "area":4, "prereq":[], "preCH":0},
+  {"codigo":"PROJ1-A5", "nome":"Projeto Nível I - Controle (4 cr)", "ha":72, "aulas":4, "tipo":"projeto1", "area":5, "prereq":[], "preCH":0},
+  {"codigo":"PROJ1-A6", "nome":"Projeto Nível I - Gestão (4 cr)", "ha":72, "aulas":4, "tipo":"projeto1", "area":6, "prereq":[], "preCH":0},
+
+  {"codigo":"PROJ2", "nome":"Projeto Nível II (4 cr)", "ha":72, "aulas":4, "tipo":"projeto2", "area":null, "prereq":[], "preCH":0}
+ ]
+}
