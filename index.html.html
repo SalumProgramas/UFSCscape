@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grade Curricular Interativa</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font:13px/1.35 system-ui,sans-serif;background:#f6f7f9;color:#1d2230}
+header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 16px;background:#fff;border-bottom:1px solid #cfd4de}
+h1{font-size:16px;margin:0 auto 0 0}
+button,label.btn{font:inherit;padding:6px 12px;border:1px solid #98a2b3;border-radius:6px;background:#fff;cursor:pointer}
+button:hover,label.btn:hover{background:#eef1f6}
+input[type=file]{display:none}
+.dica{margin:12px 16px 0;color:#475467}
+#aviso{margin:12px 16px;padding:10px;background:#fffaeb;border:1px solid #fec84b;border-radius:6px}
+#wrap{position:relative;padding:16px;overflow-x:auto}
+#svg{position:absolute;left:0;top:0;pointer-events:none;z-index:0}
+#svg>path{fill:none;stroke:#7a869a;stroke-width:1.4;opacity:.55}
+#svg>path.bad{stroke:#d92d20;opacity:.9}
+#svg.hl>path{opacity:.08}
+#svg.hl>path.on{opacity:1;stroke-width:2.4}
+#grade{position:relative;z-index:1;display:flex;gap:44px;width:max-content}
+.col{width:170px;min-height:240px;border-radius:8px}
+.col.over{outline:2px dashed #2e6bd6;background:#e8f0ff80}
+.ch{position:relative;padding:6px 4px;font-weight:600;text-align:center;border-bottom:2px solid #98a2b3;margin-bottom:12px}
+.ch small{display:block;font-weight:400;color:#475467}
+.ch.bad small{color:#d92d20;font-weight:600}
+.ch.bad small.acum{color:#475467;font-weight:400}
+.col.collapsed{min-height:0}
+.col-toggle{position:absolute;top:4px;right:2px;padding:0 5px;border:0;background:transparent;color:#475467;font-size:11px;line-height:18px;border-radius:4px}
+.col-toggle:focus-visible{outline:2px solid #2e6bd6}
+.b{position:relative;margin-bottom:12px;padding:6px 8px;border-radius:7px;border:1.5px solid #0003;cursor:grab;background:#d9d9d9;color:#1d2230}
+.b.cat{border:1.5px dashed #2e6bd6;} 
+.b.err{border-color:#d92d20;box-shadow:0 0 0 2px #d92d2050}
+.b b{display:block}
+.b span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:12px}
+.b i{font-style:normal;color:#475467;font-size:11px}
+.b em{position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#d92d20;color:#fff;text-align:center;font:700 12px/18px system-ui}
+#toolbar{display:flex;align-items:stretch;margin:12px 16px 0;background:#fff;border:1px solid #cfd4de;border-radius:8px;flex-wrap:wrap}
+#alert-area{flex:0 0 25%;position:relative;border-right:1px solid #cfd4de;display:flex;align-items:center;min-width:0}
+#search-area{flex:0 0 25%;position:relative;border-right:1px solid #cfd4de;display:flex;align-items:center;padding:0 12px;min-width:0}
+#toolbar-right{flex:1 1 50%;display:flex;align-items:center;justify-content:flex-end;gap:16px;padding:10px 12px;min-width:0;flex-wrap:wrap}
+#alert-status{display:flex;align-items:center;gap:8px;border:1px solid transparent;background:transparent;padding:10px;cursor:pointer;text-align:left;width:100%;height:100%}
+#alert-status:hover{background:#f6f7f9}
+#alert-icon{font-size:20px;line-height:1}
+#alert-status-text{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#alert-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;width:min(460px, calc(100vw - 40px));max-height:min(60vh, 420px);overflow:auto;z-index:1000;padding:14px 38px 12px 14px;background:#fff;border:1px solid #cfd4de;border-radius:8px;box-shadow:0 10px 30px #10182830}
+#alert-panel.visible{display:block}
+#alert-panel h2{font-size:14px;margin:0 0 8px}
+#alert-panel ul{margin:6px 0 0;padding-left:18px;color:#b42318}
+#alert-panel li{margin:4px 0}
+#alert-close{position:absolute;right:6px;top:6px;width:28px;height:28px;padding:0;font-size:18px;line-height:1;border:0}
+#alert-panel.ok #alert-list{color:#157347}
+#search-input{width:100%;padding:7px 10px;border:1px solid #98a2b3;border-radius:6px;font:inherit;background:#f6f7f9}
+#search-input:focus{background:#fff;outline:2px solid #2e6bd6}
+#search-results{position:absolute;top:calc(100% + 4px);left:12px;right:12px;background:#fff;border:1px solid #cfd4de;border-radius:6px;list-style:none;margin:0;padding:0;max-height:300px;overflow-y:auto;z-index:2000;box-shadow:0 4px 12px #10182820;display:none}
+#search-results.open{display:block}
+#search-results li{padding:8px 12px;cursor:pointer;border-bottom:1px solid #f2f4f7}
+#search-results li:hover{background:#f6f7f9}
+#search-results li b{display:block;font-size:12px;color:#475467}
+.tb-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;white-space:nowrap}
+#semester{width:104px;padding:6px 8px;border:1px solid #98a2b3;border-radius:6px;font:inherit}
+#phase-count{min-width:24px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+#toolbar button:disabled{opacity:.4;cursor:not-allowed}
+#grad-preview{font-weight:600}
+#grad-detail{color:#475467;font-size:12px}
+.b.selected{border:2px solid #159447;box-shadow:0 0 0 2px #15944730}
+#svg>path.good{stroke:#159447;opacity:.95}
+#svg.hl>path.good.on{stroke:#159447;opacity:1;stroke-width:2.8}
+@media(max-width:900px){
+  #alert-area, #search-area{flex-basis:50%;border-bottom:1px solid #cfd4de}
+  #search-area{border-right:none}
+  #toolbar-right{flex-basis:100%;justify-content:flex-start}
+}
+@media print{
+ @page{size:landscape;margin:8mm}
+ header,.dica,#aviso,#toolbar,.col-toggle{display:none}
+ body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ #wrap{overflow:visible}
+}
+</style>
+</head>
+<body>
+<header>
+ <h1>Grade curricular</h1>
+ <button id="reset">Restaurar sugestão</button>
+ <button id="salvar">Salvar grade (.json)</button>
+ <label class="btn">Abrir grade (.json)<input type="file" id="abrir" accept=".json"></label>
+ <button id="pdf">Exportar PDF</button>
+</header>
+
+<div id="aviso" hidden>
+ Não consegui ler <code>curriculo.json</code>. Abra a página por um servidor local ou selecione o arquivo manualmente:
+ <label class="btn">Abrir curriculo.json<input type="file" id="cur" accept=".json"></label>
+</div>
+
+<div id="toolbar" aria-label="Ferramentas da grade curricular">
+  <div id="alert-area">
+    <button id="alert-status" type="button" aria-expanded="false" aria-controls="alert-panel">
+      <span id="alert-icon" aria-hidden="true">🟢</span>
+      <span id="alert-status-text">Tudo certo</span>
+    </button>
+    <section id="alert-panel" aria-label="Detalhes dos alertas">
+      <button id="alert-close" type="button" aria-label="Fechar alertas" title="Fechar">×</button>
+      <h2 id="alert-heading">Estado da grade</h2>
+      <div id="alert-content">Nenhum alerta.</div>
+    </section>
+  </div>
+
+  <div id="search-area">
+    <input type="text" id="search-input" placeholder="Buscar optativas e estágios..." autocomplete="off">
+    <ul id="search-results"></ul>
+  </div>
+
+  <div id="toolbar-right">
+    <div class="tb-group" aria-label="Número de fases">
+      <span>Fases:</span>
+      <button id="phase-minus" type="button" aria-label="Reduzir número de fases">−</button>
+      <span id="phase-count">10</span>
+      <button id="phase-plus" type="button" aria-label="Adicionar fase">+</button>
+    </div>
+    <div class="tb-group">
+      <label for="semester">1º semestre:</label>
+      <input id="semester" type="text" inputmode="numeric" placeholder="2026.2" value="" maxlength="6" aria-describedby="grad-detail">
+    </div>
+    <div class="tb-group" aria-live="polite">
+      <span>Formatura:</span>
+      <span id="grad-preview">Informe o semestre inicial</span>
+      <span id="grad-detail"></span>
+    </div>
+  </div>
+</div>
+
+<p class="dica">Arraste os blocos entre as fases. Duplo clique remove optativas inseridas via pesquisa.</p>
+<div id="wrap"><svg id="svg"></svg><div id="grade"></div></div>
+
+<script>
+const $ = s => document.querySelector(s);
+let C, D = {}, S = {}, N = 10, selected = null;
+const R = () => C.regras;
+let MIN_PHASES = 10, MAX_PHASES = 18; // sobrescritos por regras.semestresMin/semestresMax ao carregar o currículo
+const collapsed = new Set(); // fases minimizadas
+const clampPhases = n => Math.max(MIN_PHASES, Math.min(MAX_PHASES, n));
+let alertsPinned = false, alertsHover = false;
+
+function setAlertsVisible(visible){
+  $('#alert-panel').classList.toggle('visible', visible);
+  $('#alert-status').setAttribute('aria-expanded', visible ? 'true' : 'false');
+}
+
+function refreshAlertPanel(alerts){
+  const hasAlerts = alerts.length > 0;
+  $('#alert-icon').textContent = hasAlerts ? '🔴' : '🟢';
+  $('#alert-status-text').textContent = hasAlerts ? `${alerts.length} alerta${alerts.length === 1 ? '' : 's'}` : 'Tudo certo';
+  $('#alert-heading').textContent = hasAlerts ? `Alertas (${alerts.length})` : 'Grade sem alertas';
+  const panel = $('#alert-panel');
+  panel.classList.toggle('ok', !hasAlerts);
+  $('#alert-content').innerHTML = hasAlerts
+    ? `<ul id="alert-list">${alerts.map(x => `<li>${x}</li>`).join('')}</ul>`
+    : '<div id="alert-list">✅ Todos os requisitos, optativas e estágios estão em ordem.</div>';
+}
+
+const colorFor = k => (C.cores && C.cores[k.slice(0,3)]) || '';
+const nomeDe = k => (D[k] || (C.catalogo || []).find(x => x.codigo === k) || C.disciplinas.find(x => x.codigo === k) || {nome:k}).nome;
+
+// Valida o esquema do currículo e devolve a lista de problemas (vazia = válido)
+function validateCurriculo(j){
+  const e = [];
+  if(!j || typeof j !== 'object' || Array.isArray(j)) return ['o arquivo não contém um objeto JSON'];
+  if(!j.curso) e.push('campo "curso" ausente');
+  if(!j.curriculo) e.push('campo "curriculo" ausente');
+  const r = j.regras;
+  if(!r || typeof r !== 'object') e.push('campo "regras" ausente');
+  else ['fasesExibidas','aulasMin','aulasMax','semestresMin','semestresMax'].forEach(f => {
+    if(!Number.isFinite(r[f])) e.push(`regras.${f} ausente ou não numérico`);
+  });
+  if(!Array.isArray(j.disciplinas) || !j.disciplinas.length) e.push('"disciplinas" deve ser uma lista não vazia');
+  const seen = new Set();
+  const item = (d, w, i) => {
+    const id = `${w}[${i}]${d && d.codigo ? ' (' + d.codigo + ')' : ''}`;
+    if(!d || !d.codigo || !d.nome || !Number.isFinite(d.ha)){ e.push(`${id}: exige codigo, nome e ha numérico`); return; }
+    if(seen.has(d.codigo)) e.push(`${id}: código duplicado`);
+    seen.add(d.codigo);
+    if(d.prereq !== undefined && !(Array.isArray(d.prereq) && d.prereq.every(Array.isArray))) e.push(`${id}: prereq deve ser uma lista de listas`);
+  };
+  (Array.isArray(j.disciplinas) ? j.disciplinas : []).forEach((d,i) => { item(d,'disciplinas',i); if(d && !Number.isFinite(d.fase)) e.push(`disciplinas[${i}]: fase ausente`); });
+  if(j.catalogo !== undefined && !Array.isArray(j.catalogo)) e.push('"catalogo" deve ser uma lista');
+  (Array.isArray(j.catalogo) ? j.catalogo : []).forEach((d,i) => item(d,'catalogo',i));
+  if(r && r.estagio && !(Array.isArray(r.estagio.opcoes) && r.estagio.opcoes.every(o => Array.isArray(o) && o.length && o.every(c => seen.has(c))))) e.push('regras.estagio.opcoes deve ser uma lista de listas de códigos existentes');
+  if(r && r.optativas && !(r.optativas.tipo && Number.isFinite(r.optativas.haMin))) e.push('regras.optativas exige "tipo" e "haMin" numérico');
+  if(r && r.projetos && !(seen.has(r.projetos.exigidoPor) && Array.isArray(r.projetos.exigencias) && r.projetos.exigencias.every(q => q.tipo && q.rotulo && Number.isFinite(q.qtdMin)))) e.push('regras.projetos exige "exigidoPor" (código existente) e "exigencias" com tipo, rotulo e qtdMin');
+  return e;
+}
+
+async function init(){
+  let j;
+  try{
+    const r = await fetch(new URLSearchParams(location.search).get('curriculo') || 'curriculo.json');
+    if(!r.ok) throw 0;
+    j = await r.json();
+  }catch(e){
+    $('#aviso').hidden = false;
+    return;
+  }
+  try{ load(j); }catch(e){ $('#aviso').hidden = false; alert(e.message); }
+}
+
+function load(j){
+  const errs = validateCurriculo(j);
+  if(errs.length) throw new Error('Currículo inválido:\n• ' + errs.join('\n• '));
+  C = j;
+  D = {}; S = {}; selected = null; collapsed.clear();
+  MIN_PHASES = j.regras.semestresMin; MAX_PHASES = j.regras.semestresMax;
+  N = clampPhases(Number(j.regras.fasesExibidas) || MIN_PHASES);
+
+  j.disciplinas.forEach(d => {
+    D[d.codigo] = d;
+    S[d.codigo] = d.fase;
+  });
+
+  $('#aviso').hidden = true;
+  $('h1').textContent = `${j.curso} · currículo ${j.curriculo}`;
+  updateToolbar();
+  render();
+}
+
+const acum = c => Object.keys(S).reduce((a,k) => S[k] < c ? a + D[k].ha : a, 0);
+
+function check(k){
+  const d = D[k], c = S[k], m = [];
+  (d.prereq || []).forEach(cl => {
+    const alt = cl.filter(x => D[x]);
+    if(alt.length && !alt.some(x => S[x] < c))
+      m.push(`Pré-requisito ${alt.join(' ou ')} precisa estar em semestre anterior.`);
+  });
+  if(d.preCH){
+    const h = acum(c);
+    if(h < d.preCH) m.push(`Pré CH: exige ${d.preCH} H/A acumuladas; há ${h}.`);
+  }
+  return m;
+}
+
+function render(){
+  if(!C) return;
+  const g = $('#grade');
+  g.innerHTML = '';
+  const al = [];
+
+  for(let c = 1; c <= N; c++){
+    const ks = Object.keys(S).filter(k => S[k] === c && D[k]).sort();
+    const au = ks.reduce((a,k) => a + (D[k].aulas || 0), 0);
+    const ha = ks.reduce((a,k) => a + D[k].ha, 0);
+    const bad = au < R().aulasMin || au > R().aulasMax;
+    const isCol = collapsed.has(c);
+
+    const col = document.createElement('section');
+    col.className = 'col' + (isCol ? ' collapsed' : '');
+    col.dataset.c = c;
+    col.innerHTML = `<div class="ch ${bad?'bad':''}">${c}ª fase<small>${au} aulas/sem · ${ha} H/A</small><small class="acum">${acum(c + 1)} H/A acumuladas</small><button class="col-toggle" type="button" aria-expanded="${!isCol}" aria-label="${isCol?'Expandir':'Minimizar'} ${c}ª fase" title="${isCol?'Expandir':'Minimizar'} ${c}ª fase">${isCol?'▼':'▲'}</button></div>`;
+    col.querySelector('.col-toggle').onclick = ev => {
+      ev.stopPropagation();
+      if(isCol) collapsed.delete(c); else collapsed.add(c);
+      render();
+      const nb = document.querySelector(`.col[data-c="${c}"] .col-toggle`);
+      if(nb) nb.focus();
+    };
+
+    if(bad) al.push(`${c}ª fase: carga semanal de ${au} aulas fora do intervalo ${R().aulasMin}–${R().aulasMax}.`);
+
+    col.ondragover = e => {
+      e.preventDefault();
+      col.classList.add('over');
+    };
+    col.ondragleave = () => col.classList.remove('over');
+    col.ondrop = e => {
+      e.preventDefault();
+      const k = e.dataTransfer.getData('text/plain');
+      if(D[k]){
+        S[k] = c;
+        render();
+      }
+    };
+
+    ks.forEach(k => {
+      const m = check(k);
+      const b = document.createElement('div');
+      
+      const isCatalog = C.catalogo && C.catalogo.some(x => x.codigo === k) && !C.disciplinas.some(x => x.codigo === k);
+
+      b.className = `b${m.length?' err':''}${selected === k?' selected':''}${isCatalog?' cat':''}`;
+      b.dataset.k = k;
+      const bg = colorFor(k);
+      if(bg) b.style.background = bg;
+      if(isCol) b.hidden = true;
+      
+      let tooltip = m.length ? m.join('\n') + '\n\n' : '';
+      tooltip += D[k].nome;
+      if(isCatalog) tooltip += '\n(Duplo clique para remover da grade)';
+      b.title = tooltip;
+      
+      b.onclick = () => {
+        selected = selected === k ? null : k;
+        render();
+      };
+      
+      b.ondblclick = () => {
+        if(isCatalog){
+            delete D[k];
+            delete S[k];
+            if(selected === k) selected = null;
+            render();
+        }
+      }
+
+      b.innerHTML = `<b>${k}</b><span>${D[k].nome}</span><i>${D[k].ha} H/A${D[k].aulas ? ` · ${D[k].aulas} aulas` : ''}</i>${m.length?'<em>!</em>':''}`;
+      b.draggable = true;
+      b.ondragstart = e => e.dataTransfer.setData('text/plain', k);
+      b.onmouseenter = () => hl(k);
+      b.onmouseleave = () => hl();
+
+      m.forEach(x => al.push(`${k} (${c}ª fase): ${x}`));
+      col.appendChild(b);
+    });
+
+    g.appendChild(col);
+  }
+
+  // Validações Globais
+  const grade = Object.keys(S).map(k => D[k]).filter(Boolean);
+
+  const E = R().estagio;
+  if(E){
+    const has = k => !!S[k];
+    const parcial = E.opcoes.find(o => o.some(has) && !o.every(has));
+    if(parcial){
+      al.push(`Estágio: ${parcial.filter(has).map(nomeDe).join(' + ')} exige ${parcial.filter(k => !has(k)).map(nomeDe).join(' + ')} na grade para integralização.`);
+    }else if(!E.opcoes.some(o => o.every(has))){
+      al.push(`Estágio: Pendente cumprimento (Adicione ${E.opcoes.map(o => o.map(nomeDe).join(' + ')).join(' ou ')} via pesquisa).`);
+    }
+  }
+
+  const O = R().optativas;
+  if(O){
+    const optativas = grade.filter(d => d.tipo === O.tipo);
+    const optHA = optativas.reduce((a, d) => a + d.ha, 0);
+    const optAreas = new Set(optativas.filter(d => d.area != null).map(d => d.area));
+    const areasMin = O.areasMin || 0;
+    if (optHA < O.haMin || optAreas.size < areasMin) {
+      al.push(`Optativas: ${optHA}/${O.haMin} H/A. Áreas distintas contempladas: ${optAreas.size}/${areasMin}.`);
+    }
+  }
+
+  const PJ = R().projetos;
+  if (PJ && S[PJ.exigidoPor]) {
+    const st = PJ.exigencias.map(q => {
+      const l = grade.filter(d => d.tipo === q.tipo);
+      const a = new Set(l.filter(d => d.area != null).map(d => d.area)).size;
+      return {q, n:l.length, a, ok: l.length >= q.qtdMin && (!q.areasDistintasMin || a >= q.areasDistintasMin)};
+    });
+    if (st.some(x => !x.ok)) {
+      al.push(`${PJ.exigidoPor}: Exige ${st.map(x => `${x.q.rotulo} (mín. ${x.q.qtdMin}${x.q.areasDistintasMin ? `, em ${x.q.areasDistintasMin} áreas distintas` : ''})`).join('; ')}. Atual: ${st.map(x => `${x.q.rotulo}: ${x.n}${x.q.areasDistintasMin ? ` em ${x.a} área(s)` : ''}`).join('; ')}.`);
+    }
+  }
+
+  refreshAlertPanel(al);
+  requestAnimationFrame(edges);
+}
+
+function edges(){
+  const w = $('#wrap');
+  const svg = $('#svg');
+  // O SVG é absoluto e conta como conteúdo rolável de #wrap: se ele mantiver o tamanho
+  // antigo, scrollWidth/scrollHeight nunca diminuem. Zera antes de medir o conteúdo real.
+  svg.setAttribute('width', 0);
+  svg.setAttribute('height', 0);
+  const wb = w.getBoundingClientRect();
+  svg.setAttribute('width', w.scrollWidth);
+  svg.setAttribute('height', w.scrollHeight);
+
+  let h = '<defs>' + ['','bad'].map(t =>
+    `<marker id="a${t}" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="${t?'#d92d20':'#7a869a'}"/></marker>`
+  ).join('') + '</defs>';
+
+  const P = k => {
+    const el = document.querySelector(`.b[data-k="${k}"]`);
+    if(!el) return null;
+    // bloco oculto (fase minimizada): a conexão ancora no cabeçalho da fase
+    return (el.hidden ? el.closest('.col').querySelector('.ch') : el).getBoundingClientRect();
+  };
+
+  Object.keys(S).forEach(t => (D[t].prereq || []).forEach(cl => {
+    const alt = cl.filter(x => D[x]);
+    alt.forEach(s => {
+      const ae = P(s), be = P(t);
+      if(!ae || !be) return;
+      const hs = document.querySelector(`.b[data-k="${s}"]`).hidden, ht = document.querySelector(`.b[data-k="${t}"]`).hidden;
+      if(hs && ht && S[s] === S[t]) return; // ambos dentro da mesma fase minimizada
+
+      const a = ae, b = be;
+      const x1 = a.right - wb.left + w.scrollLeft;
+      const y1 = a.top + a.height/2 - wb.top + w.scrollTop;
+      const x2 = b.left - wb.left + w.scrollLeft - 1;
+      const y2 = b.top + b.height/2 - wb.top + w.scrollTop;
+
+      const bad = S[s] >= S[t];
+      const good = !bad;
+      const related = selected && (selected === s || selected === t);
+      const dx = Math.max(30, Math.abs(x2 - x1) / 2);
+      const cls = `${bad?'bad':''}${good && related?' good':''}`;
+
+      h += `<path data-s="${s}" data-t="${t}" class="${cls}" ${alt.length>1?'stroke-dasharray="5 3"':''} marker-end="url(#a${bad?'bad':''})" d="M${x1} ${y1}C${x1+dx} ${y1} ${x2-dx} ${y2} ${x2} ${y2}"/>`;
+    });
+  }));
+  svg.innerHTML = h;
+}
+
+function hl(k){
+  const s = $('#svg');
+  s.classList.toggle('hl', !!k);
+  s.querySelectorAll('path[data-s]').forEach(p =>
+    p.classList.toggle('on', !!k && (p.dataset.s === k || p.dataset.t === k))
+  );
+}
+
+function semesterIndex(value){
+  const m = String(value || '').trim().match(/^(20\d{2})\.([12])$/);
+  return m ? Number(m[1]) * 2 + (Number(m[2]) - 1) : null;
+}
+
+function semesterLabel(index){
+  const year = Math.floor(index / 2);
+  const term = index % 2 + 1;
+  return `${year}.${term}`;
+}
+
+function updateToolbar(){
+  $('#phase-count').textContent = N;
+  $('#phase-minus').disabled = N <= MIN_PHASES;
+  $('#phase-plus').disabled = N >= MAX_PHASES;
+
+  const start = semesterIndex($('#semester').value);
+  if(start === null){
+    $('#grad-preview').textContent = 'Informe o semestre inicial';
+    $('#grad-detail').textContent = 'Formato: 20XX.Y';
+  }else{
+    $('#grad-preview').textContent = semesterLabel(start + N - 1);
+    $('#grad-detail').textContent = `(${N} fases, sem interrupções)`;
+  }
+}
+
+function changePhaseCount(next){
+  const old = N;
+  N = clampPhases(next);
+  if(N < old){
+    Object.keys(S).forEach(k => {
+      if(S[k] > N) S[k] = (D[k] && D[k].fase) ? D[k].fase : N;
+    });
+  }
+  updateToolbar();
+  render();
+}
+
+$('#phase-minus').onclick = () => changePhaseCount(N - 1);
+$('#phase-plus').onclick = () => changePhaseCount(N + 1);
+$('#semester').oninput = updateToolbar;
+
+$('#alert-area').addEventListener('mouseenter', () => {
+  alertsHover = true;
+  setAlertsVisible(true);
+});
+
+$('#alert-area').addEventListener('mouseleave', () => {
+  alertsHover = false;
+  if(!alertsPinned) setAlertsVisible(false);
+});
+
+$('#alert-status').onclick = () => {
+  alertsPinned = !alertsPinned;
+  setAlertsVisible(alertsPinned || alertsHover);
+};
+
+$('#alert-close').onclick = () => {
+  alertsPinned = false;
+  alertsHover = false;
+  setAlertsVisible(false);
+};
+
+// Motor de Busca do Catálogo
+const searchInput = $('#search-input');
+const searchResults = $('#search-results');
+
+searchInput.oninput = () => {
+  const q = searchInput.value.toLowerCase().trim();
+  if(!q || !C || !C.catalogo) { 
+    searchResults.classList.remove('open'); 
+    return; 
+  }
+  const hits = C.catalogo.filter(x => !S[x.codigo] && (x.codigo.toLowerCase().includes(q) || x.nome.toLowerCase().includes(q))).slice(0, 10);
+  if(!hits.length) { 
+    searchResults.classList.remove('open'); 
+    return; 
+  }
+  searchResults.innerHTML = hits.map(x => `<li data-c="${x.codigo}"><b>${x.codigo}</b>${x.nome}</li>`).join('');
+  searchResults.classList.add('open');
+};
+
+searchResults.onclick = e => {
+  const li = e.target.closest('li');
+  if(!li) return;
+  const k = li.dataset.c;
+  const item = C.catalogo.find(x => x.codigo === k);
+  if(item){
+    D[k] = item;
+    S[k] = N;
+    render();
+  }
+  searchInput.value = '';
+  searchResults.classList.remove('open');
+};
+
+document.addEventListener('click', e => { 
+  if(!e.target.closest('#search-area')) searchResults.classList.remove('open'); 
+});
+
+$('#reset').onclick = () => {
+  if(C){
+    D = {}; S = {};
+    C.disciplinas.forEach(d => { D[d.codigo] = d; S[d.codigo] = d.fase; });
+    selected = null;
+    render();
+  }
+};
+
+$('#pdf').onclick = () => print();
+
+$('#salvar').onclick = () => {
+  if(!C) return;
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([
+    JSON.stringify({curriculo:C.curriculo, versao:1, semestres:S}, null, 1)
+  ], {type:'application/json'}));
+  a.download = `grade-${C.curriculo}.json`;
+  a.click();
+};
+
+// Upload robusto da Grade Salva
+$('#abrir').onchange = async e => {
+  const f = e.target.files[0];
+  if(!f || !C) {
+      e.target.value = '';
+      return;
+  }
+  try{
+    const j = JSON.parse(await f.text());
+    
+    // Converte os dois lados para String para não rejeitar por erro de tipagem (ex: 20051 !== "20051")
+    if(String(j.curriculo) !== String(C.curriculo) || !j.semestres) {
+        throw new Error("Currículo incompatível");
+    }
+
+    D = {}; S = {};
+    C.disciplinas.forEach(d => D[d.codigo] = d);
+    
+    for(const k in j.semestres){
+      const v = +j.semestres[k];
+      if(v >= 1 && v <= MAX_PHASES) {
+        if(!D[k] && C.catalogo) {
+           const catItem = C.catalogo.find(x => x.codigo === k);
+           if(catItem) D[k] = catItem;
+        }
+        if(D[k]) S[k] = v;
+      }
+    }
+    N = clampPhases(Math.max(N, ...Object.values(S)));
+    updateToolbar();
+    render();
+  }catch(x){
+    console.error(x);
+    alert('Arquivo de grade inválido para este currículo.');
+  } finally {
+    e.target.value = '';
+  }
+};
+
+$('#cur').onchange = async e => {
+  const f = e.target.files[0];
+  try{
+    load(JSON.parse(await f.text()));
+  }catch(x){
+    alert(x instanceof SyntaxError ? 'curriculo.json inválido (JSON malformado).' : (x && x.message) || 'curriculo.json inválido.');
+  } finally {
+    e.target.value = '';
+  }
+};
+
+addEventListener('resize', () => C && edges());
+
+updateToolbar();
+refreshAlertPanel([]);
+init();
+</script>
+</body>
+</html>
