@@ -1,0 +1,2106 @@
+{
+  "curso": "203 - Engenharia Mecânica",
+  "curriculo": "20251",
+  "cores": {
+    "EMC": "#d4b293",
+    "FSC": "#f6d8fb",
+    "INE": "#c2f8fb",
+    "MTM": "#b4ecb9",
+    "EEL": "#fcfca6",
+    "ANT": "#d4b293",
+    "EGR": "#d9d2f7",
+    "ENS": "#f4b6c2",
+    "EPS": "#b9d9f2",
+    "LSB": "#d0e0a8"
+  },
+  "regras": {
+    "fasesExibidas": 10,
+    "aulasMin": 13,
+    "aulasMax": 29,
+    "semestresMin": 8,
+    "semestresMax": 18,
+    "estagio": {
+      "opcoes": [
+        [
+          "EMC5805"
+        ]
+      ]
+    },
+    "optativas": {
+      "tipo": "optativa",
+      "haMin": 288,
+      "blocoEspecialHaMax": 72,
+      "monitoriaHaMax": 54
+    },
+    "tcc": {
+      "haMin": 126,
+      "disciplinas": [
+        "EMC5801",
+        "EMC5803"
+      ]
+    },
+    "extensao": {
+      "haMin": 468,
+      "haObrigatoriaEmDisciplina": 36,
+      "haEmAcoes": 432,
+      "disciplinaAcoesIgnorada": "EMC7000"
+    }
+  },
+  "observacoes": "Dados extraídos do currículo UFSC 2025.1. H/A em horas-aula. prereq representa cláusulas ligadas por E; cada cláusula é uma lista de alternativas ligadas por OU. Coluna Equivalentes e relações de equivalência foram ignoradas. Disciplinas regulares ficam em disciplinas por fase; catálogo contém optativas, intercâmbio e monitoria para pesquisa. EMC7000 foi omitida conforme solicitado; EMC5500 permanece como disciplina obrigatória de 36 H/A. EMC5041–EMC5052 e EMC5950–EMC5954 são itens de intercâmbio não contabilizados na carga optativa conforme o PDF. EMC5950–EMC5954 não têm carga H/A ou aulas indicada no PDF e foram representadas com zero apenas como marcador técnico, com cargaNaoInformada=true. Optativas do Bloco Especial e monitoria obedecem ao limite combinado de 72 H/A; monitoria limitada a 54 H/A. Regras de extensão refletem as exigências do currículo, embora EMC7000 tenha sido omitida do catálogo.",
+  "disciplinas": [
+    {
+      "codigo": "EGR5213",
+      "nome": "Representação Gráfica Espacial",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 1,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5000",
+      "nome": "Cálculo 1 Aplicado à Engenharia Mecânica",
+      "ha": 18,
+      "aulas": 1,
+      "fase": 1,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5004",
+      "nome": "Introdução à Engenharia Mecânica",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 1,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5092",
+      "nome": "Introdução à Ciência dos Materiais",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 1,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5500",
+      "nome": "Introdução à Pesquisa e Extensão (EXT 36h-a)",
+      "ha": 36,
+      "aulas": 2,
+      "fase": 1,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "FSC5101",
+      "nome": "Física I",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 1,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "INE5201",
+      "nome": "Introdução à Ciência da Computação",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 1,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "MTM3110",
+      "nome": "Cálculo 1",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 1,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "EGR5214",
+      "nome": "Desenho e Modelagem Geométrica",
+      "ha": 108,
+      "aulas": 6,
+      "fase": 2,
+      "prereq": [
+        [
+          "EGR5213"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5132",
+      "nome": "Estática",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 2,
+      "prereq": [
+        [
+          "FSC5101"
+        ],
+        [
+          "MTM3110"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5510",
+      "nome": "Cálculo 2 Aplicado à Engenharia Mecânica",
+      "ha": 18,
+      "aulas": 1,
+      "fase": 2,
+      "prereq": [
+        [
+          "MTM3110"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "FSC5002",
+      "nome": "Física II",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 2,
+      "prereq": [
+        [
+          "FSC5101"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "FSC5122",
+      "nome": "Física Experimental I",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 2,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "MTM3120",
+      "nome": "Cálculo 2",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 2,
+      "prereq": [
+        [
+          "MTM3110"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "MTM3121",
+      "nome": "Álgebra Linear",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 2,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5128",
+      "nome": "Mecânica dos Sólidos A",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 3,
+      "prereq": [
+        [
+          "EMC5132"
+        ],
+        [
+          "MTM3121"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5405",
+      "nome": "Fundamentos da Termodinâmica",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 3,
+      "prereq": [
+        [
+          "FSC5002"
+        ],
+        [
+          "MTM3120"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5520",
+      "nome": "Materiais Metálicos",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 3,
+      "prereq": [],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5521",
+      "nome": "Cálculo 3 Aplicado à Engenharia Mecânica",
+      "ha": 18,
+      "aulas": 1,
+      "fase": 3,
+      "prereq": [
+        [
+          "MTM3120"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "INE5202",
+      "nome": "Cálculo Numérico em Computadores",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 3,
+      "prereq": [
+        [
+          "INE5201"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "MTM3103",
+      "nome": "Cálculo 3",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 3,
+      "prereq": [
+        [
+          "MTM3120"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "MTM3131",
+      "nome": "Equações Diferenciais Ordinárias",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 3,
+      "prereq": [
+        [
+          "MTM3110"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5223",
+      "nome": "Estatística e Metrologia para Engenheiros",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 4,
+      "prereq": [
+        [
+          "MTM3110"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5302",
+      "nome": "Metodologia de Projeto em Engenharia",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 4,
+      "prereq": [
+        [
+          "EGR5214"
+        ],
+        [
+          "EMC5004"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5418",
+      "nome": "Termodinâmica Aplicada",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 4,
+      "prereq": [
+        [
+          "EMC5405"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5806",
+      "nome": "Cálculo 4 Aplicado à Engenharia Mecânica",
+      "ha": 18,
+      "aulas": 1,
+      "fase": 4,
+      "prereq": [
+        [
+          "MTM3103"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5807",
+      "nome": "Mecânica dos Sólidos B",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 4,
+      "prereq": [
+        [
+          "EMC5128"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "FSC5113",
+      "nome": "Física III",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 4,
+      "prereq": [
+        [
+          "MTM3110"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "MTM3104",
+      "nome": "Cálculo 4",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 4,
+      "prereq": [
+        [
+          "MTM3131"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EEL5113",
+      "nome": "Eletrotécnica Geral",
+      "ha": 36,
+      "aulas": 2,
+      "fase": 5,
+      "prereq": [
+        [
+          "FSC5113"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5110",
+      "nome": "Laboratório em Propriedades Mecânicas",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 5,
+      "prereq": [
+        [
+          "EMC5092"
+        ],
+        [
+          "EMC5807"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5202",
+      "nome": "Usinagem dos Materiais",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 5,
+      "prereq": [
+        [
+          "EMC5520"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5361",
+      "nome": "Dinâmica de Corpos Rígidos",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 5,
+      "prereq": [
+        [
+          "FSC5101"
+        ],
+        [
+          "MTM3120"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5407",
+      "nome": "Mecânica dos Fluidos I",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 5,
+      "prereq": [
+        [
+          "EMC5405"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5506",
+      "nome": "Laboratório em Ciências Térmicas",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 5,
+      "prereq": [
+        [
+          "EMC5405"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EPS5229",
+      "nome": "Organização Industrial",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 5,
+      "prereq": [],
+      "preCH": 1500
+    },
+    {
+      "codigo": "EMC5003",
+      "nome": "Tecnologia e Desenvolvimento",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 6,
+      "prereq": [],
+      "preCH": 1500
+    },
+    {
+      "codigo": "EMC5336",
+      "nome": "Controle de Sistemas Dinâmicos",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 6,
+      "prereq": [
+        [
+          "MTM3104"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5417",
+      "nome": "Transmissão de Calor",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 6,
+      "prereq": [
+        [
+          "EMC5405"
+        ],
+        [
+          "INE5201"
+        ],
+        [
+          "MTM3103"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5505",
+      "nome": "Mecanismos",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 6,
+      "prereq": [
+        [
+          "EMC5361"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5507",
+      "nome": "Elementos de Máquinas",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 6,
+      "prereq": [
+        [
+          "EMC5807"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5509",
+      "nome": "Conformação de Metais",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 6,
+      "prereq": [
+        [
+          "EMC5520"
+        ],
+        [
+          "EMC5807"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5550",
+      "nome": "Estrutura, propriedades e Processamento",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 6,
+      "prereq": [
+        [
+          "EMC5092"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5005",
+      "nome": "Projeto Integrado em Engenharia Mecânica",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 7,
+      "prereq": [
+        [
+          "EMC5302"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5006",
+      "nome": "Eletrônica",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 7,
+      "prereq": [
+        [
+          "EEL5113"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5404",
+      "nome": "Transmissão de Calor II",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 7,
+      "prereq": [
+        [
+          "EMC5407"
+        ],
+        [
+          "EMC5417"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5419",
+      "nome": "Mecânica de Fluidos II",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 7,
+      "prereq": [
+        [
+          "EMC5407"
+        ],
+        [
+          "MTM3104"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5443",
+      "nome": "Fundamentos de Sistemas Hidráulicos e Pneumáticos",
+      "ha": 54,
+      "aulas": 3,
+      "fase": 7,
+      "prereq": [
+        [
+          "EMC5407"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5600",
+      "nome": "Fundamentos de Vibrações",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 7,
+      "prereq": [
+        [
+          "EMC5361"
+        ],
+        [
+          "EMC5807"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5800",
+      "nome": "Soldagem",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 7,
+      "prereq": [
+        [
+          "EEL5113"
+        ],
+        [
+          "EMC5520"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5210",
+      "nome": "Laboratório em Manufatura e Metrologia",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 8,
+      "prereq": [
+        [
+          "EMC5202"
+        ],
+        [
+          "EMC5223"
+        ],
+        [
+          "EMC5302"
+        ],
+        [
+          "EMC5509"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5508",
+      "nome": "Mecânica dos Sólidos Computacional",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 8,
+      "prereq": [
+        [
+          "EMC5807"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5801",
+      "nome": "Planejamento do Projeto Final de Curso",
+      "ha": 36,
+      "aulas": 2,
+      "fase": 8,
+      "prereq": [],
+      "preCH": 2200
+    },
+    {
+      "codigo": "EMC5802",
+      "nome": "Mecânica dos Fluídos Computacional",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 8,
+      "prereq": [
+        [
+          "EMC5407"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5803",
+      "nome": "Projeto Final de Curso",
+      "ha": 90,
+      "aulas": 5,
+      "fase": 9,
+      "prereq": [
+        [
+          "EMC5801"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "EMC5804",
+      "nome": "Análise Integrada de Sistemas Térmicos",
+      "ha": 72,
+      "aulas": 4,
+      "fase": 9,
+      "prereq": [
+        [
+          "EMC5404"
+        ],
+        [
+          "EMC5419"
+        ]
+      ],
+      "preCH": 0
+    },
+    {
+      "codigo": "ENS5146",
+      "nome": "Introdução à Engenharia Ambiental",
+      "ha": 36,
+      "aulas": 2,
+      "fase": 9,
+      "prereq": [],
+      "preCH": 1500
+    },
+    {
+      "codigo": "EMC5805",
+      "nome": "Estágio Profissional em Engenharia",
+      "ha": 324,
+      "aulas": 18,
+      "fase": 10,
+      "prereq": [],
+      "preCH": 2500
+    }
+  ],
+  "catalogo": [
+    {
+      "codigo": "EMC5007",
+      "nome": "Aspectos de Segurança do Trabalho",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5219",
+      "nome": "Tecnologia de Comando Numérico",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5227",
+      "nome": "Automação de Processos de Soldagem",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EEL5113"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5236",
+      "nome": "Medição de Grandezas Mecânicas",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5223"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5251",
+      "nome": "Introdução à Robótica Industrial",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5275",
+      "nome": "Tecnologia da Usinagem com Ferramentas",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5202"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5279",
+      "nome": "Projeto de Sistemas de Qualidade",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5317",
+      "nome": "Controle de Ruído",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5405"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5356",
+      "nome": "Veículos Automotores I",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5807"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5413",
+      "nome": "Introdução aos Escoamentos Multifásicos",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5407"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5432",
+      "nome": "Análise Experimental de Máquinas e Sistemas Térmicos",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5405"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5452",
+      "nome": "Conservação de e Energia",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5405"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5464",
+      "nome": "Tópicos de Sistemas Hidráulicos",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5336"
+        ],
+        [
+          "EMC5443"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5465",
+      "nome": "Tópicos de Pneumática",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5443"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5471",
+      "nome": "Geração e Distribuição de Vapor",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5405"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5489",
+      "nome": "Energias Renováveis",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EMC5405"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5808",
+      "nome": "Engenharia Integrada por Computador e Sistemas CAx CAD/CAM/CAx/CNC",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EGR5214"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC5809",
+      "nome": "Manufatura auxiliada por computador, programação e simulação da usinagem",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [
+        [
+          "EGR5214"
+        ],
+        [
+          "EMC5202"
+        ]
+      ],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC6200",
+      "nome": "Construindo Carreira em Engenharia",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 800,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC6279",
+      "nome": "Projeto de Sistemas de Qualidade",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 1500,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "EMC7090",
+      "nome": "Empreendedorismo: Startups",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "optativa_regular"
+    },
+    {
+      "codigo": "ANT7003",
+      "nome": "Relações Inter-étnicas",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS5235",
+      "nome": "Planejamento e Controle da Produção",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS5240",
+      "nome": "Gerenciamento de Projetos",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS7005",
+      "nome": "Pesquisa Operacional",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS7010",
+      "nome": "Gestão Patrimonial",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS7013",
+      "nome": "Empreendedorismo",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS7018",
+      "nome": "Análise Gerencial de Custos",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS7019",
+      "nome": "Engenharia Econômica",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS7020",
+      "nome": "Ergonomia",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS7022",
+      "nome": "Engenharia do Trabalho",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EPS7026",
+      "nome": "Logística Empresarial",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "LSB7244",
+      "nome": "Língua Brasileira de Sinais - Libras I (PCC 18h-a)",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "bloco_especial"
+    },
+    {
+      "codigo": "EMC5243",
+      "nome": "Tópicos Especiais em Fabricação",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5292",
+      "nome": "Tópicos Especiais em Fabricação II",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5293",
+      "nome": "Tópicos Especiais em Fabricação III",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5294",
+      "nome": "Tópicos Especiais em Fabricação IV",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5295",
+      "nome": "Tópicos Especiais em Fabricação V",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5296",
+      "nome": "Tópicos Especiais em Fabricação VI",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5297",
+      "nome": "Tópicos Especiais em Fabricação VII",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5298",
+      "nome": "Tópicos Especiais em Fabricação VIII",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5322",
+      "nome": "Tópicos Especiais em Projeto",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5362",
+      "nome": "Tópicos Especiais em Projeto II",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5363",
+      "nome": "Tópicos Especiais em Projeto III",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5364",
+      "nome": "Tópicos Especiais em Projeto IV",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5365",
+      "nome": "Tópicos Especiais em Projeto V",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5366",
+      "nome": "Tópicos Especiais em Projeto VI",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5367",
+      "nome": "Tópicos Especiais em Projeto VII",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5368",
+      "nome": "Tópicos Especiais em Projeto VIII",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5482",
+      "nome": "Tópicos Especiais Ciências Térmicas II",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5483",
+      "nome": "Tópicos Especiais Ciências Térmicas III",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5484",
+      "nome": "Tópicos Especiais Ciências Térmicas IV",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5485",
+      "nome": "Tópicos Especiais Ciências Térmicas V",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5486",
+      "nome": "Tópicos Especiais Ciências Térmicas VI",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5487",
+      "nome": "Tópicos Especiais Ciências Térmicas VII",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5488",
+      "nome": "Tópicos Especiais Ciências Térmicas VIII",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "topicos_especiais"
+    },
+    {
+      "codigo": "EMC5955",
+      "nome": "Intercâmbio Projeto 1",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5956",
+      "nome": "Intercâmbio Projeto 2",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5957",
+      "nome": "Intercâmbio Projeto 3",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5958",
+      "nome": "Intercâmbio Projeto 4",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5959",
+      "nome": "Intercâmbio Projeto 5",
+      "ha": 36,
+      "aulas": 36,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5960",
+      "nome": "Intercâmbio Projeto 6",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5961",
+      "nome": "Intercâmbio Projeto 7",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5962",
+      "nome": "Intercâmbio Projeto 8",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5963",
+      "nome": "Intercâmbio Projeto 9",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5964",
+      "nome": "Intercâmbio Projeto 10",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5965",
+      "nome": "Intercâmbio Projeto 11",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5966",
+      "nome": "Intercâmbio Projeto 12",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5967",
+      "nome": "Intercâmbio Termo 1",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5968",
+      "nome": "Intercâmbio Termo 2",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5969",
+      "nome": "Intercâmbio Termo 3",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5970",
+      "nome": "Intercâmbio Termo 4",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5971",
+      "nome": "Intercâmbio Termo 5",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5972",
+      "nome": "Intercâmbio Termo 6",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5973",
+      "nome": "Intercâmbio Termo 7",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5974",
+      "nome": "Intercâmbio Termo 8",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5975",
+      "nome": "Intercâmbio Termo 9",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5976",
+      "nome": "Intercâmbio termo 10",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5977",
+      "nome": "Intercâmbio Termo 11",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5978",
+      "nome": "Intercâmbio Termo 12",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5979",
+      "nome": "Intercâmbio Fabricação 1",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5980",
+      "nome": "Intercâmbio Fabricação 2",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5981",
+      "nome": "Intercâmbio Fabricação 3",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5982",
+      "nome": "Intercâmbio Fabricação 4",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5983",
+      "nome": "Intercâmbio Fabricação 5",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5984",
+      "nome": "Intercâmbio Fabricação 6",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5985",
+      "nome": "Intercâmbio de Fabricação 7",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5986",
+      "nome": "Intercâmbio de Fabricação 8",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5987",
+      "nome": "Intercâmbio de Fabricação 9",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5988",
+      "nome": "Intercâmbio de Fabricação 10",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5989",
+      "nome": "Intercâmbio de Fabricação 11",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5990",
+      "nome": "Intercâmbio Fabricação 12",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_mecanica"
+    },
+    {
+      "codigo": "EMC5041",
+      "nome": "Intercâmbio Extra Curso 1",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5042",
+      "nome": "Intercâmbio Extra Curso 2",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5043",
+      "nome": "Intercâmbio Extra Curso 3",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5044",
+      "nome": "Intercâmbio Extra Curso 4",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5045",
+      "nome": "Intercâmbio Extra Curso 5",
+      "ha": 36,
+      "aulas": 2,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5046",
+      "nome": "Intercâmbio Extra Curso 6",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5047",
+      "nome": "Intercâmbio Extra Curso 7",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5048",
+      "nome": "Intercâmbio Extra Curso 8",
+      "ha": 54,
+      "aulas": 3,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5049",
+      "nome": "Intercâmbio Extra Curso 9",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5050",
+      "nome": "Intercâmbio Extra Curso 10",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5051",
+      "nome": "Intercâmbio Extra Curso 11",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5052",
+      "nome": "Intercâmbio Extra Curso 12",
+      "ha": 72,
+      "aulas": 4,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_extra_curso"
+    },
+    {
+      "codigo": "EMC5031",
+      "nome": "Atividades Complementares de Monitoria I",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "monitoria"
+    },
+    {
+      "codigo": "EMC5032",
+      "nome": "Atividades Complementares de Monitoria II",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "monitoria"
+    },
+    {
+      "codigo": "EMC5033",
+      "nome": "Atividades Complementares de Monitoria",
+      "ha": 18,
+      "aulas": 1,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "monitoria"
+    },
+    {
+      "codigo": "EMC5091",
+      "nome": "Estágio Profissional 2",
+      "ha": 0,
+      "aulas": 0,
+      "tipo": "optativa",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "estagio_optativo",
+      "cargaNaoInformada": true
+    },
+    {
+      "codigo": "EMC5950",
+      "nome": "Programa de Intercâmbio I",
+      "ha": 0,
+      "aulas": 0,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_duplo_diploma",
+      "cargaNaoInformada": true
+    },
+    {
+      "codigo": "EMC5951",
+      "nome": "Programa de Intercâmbio II",
+      "ha": 0,
+      "aulas": 0,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_duplo_diploma",
+      "cargaNaoInformada": true
+    },
+    {
+      "codigo": "EMC5952",
+      "nome": "Programa de Intercâmbio III",
+      "ha": 0,
+      "aulas": 0,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_duplo_diploma",
+      "cargaNaoInformada": true
+    },
+    {
+      "codigo": "EMC5953",
+      "nome": "Programa de Intercâbio IV",
+      "ha": 0,
+      "aulas": 0,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_duplo_diploma",
+      "cargaNaoInformada": true
+    },
+    {
+      "codigo": "EMC5954",
+      "nome": "Programa de Intercâmbio V",
+      "ha": 0,
+      "aulas": 0,
+      "tipo": "intercambio",
+      "area": null,
+      "prereq": [],
+      "preCH": 0,
+      "categoria": "intercambio_duplo_diploma",
+      "cargaNaoInformada": true
+    }
+  ]
+}
